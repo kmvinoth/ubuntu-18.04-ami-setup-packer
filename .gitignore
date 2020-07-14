@@ -2,6 +2,6 @@
 packer_cache
 packer-templates/virtualbox/
 packer-templates/iso/
-packer-templates/boxes/
+packer-templates/boxes/*.box
 vagrant_vm/.vagrant
 .ssh/
