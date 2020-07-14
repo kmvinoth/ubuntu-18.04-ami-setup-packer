@@ -4,3 +4,4 @@ packer-templates/virtualbox/
 packer-templates/iso/
 packer-templates/boxes/
 vagrant_vm/.vagrant
+.ssh/
