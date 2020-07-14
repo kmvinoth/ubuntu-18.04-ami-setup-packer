@@ -21,11 +21,11 @@ Packer is an open source tool for creating identical machine images for multiple
 
 This will take sometime because .iso file has to be fetched from the internet. If you already have the iso file locally specify the location of the iso file in the **iso_urls** array in ubuntu-18.04-server.json  
 
-Once, packer finished building the artifacts, you will find the .box file in boxes directory
+Once, packer finished building the artifacts, you will find the .box file in vagrant_vm directory
 
 ## Spining up the server with Vagrant (local)
 * Run `cd vagrant_vm`
-* Run `vagrant box add ubuntu-18.04-ami-setup-packer/boxes/ubuntu-18.04.4-server-amd64.box --name dev-server`
+* Run `vagrant box add ubuntu-18.04.4-server-amd64.box --name dev-server`
 * Run `vagrant up`
 * Run `vagrant ssh` to connect to the server
 * Run `docker version` to check docker installation
