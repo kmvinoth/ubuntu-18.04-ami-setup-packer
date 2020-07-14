@@ -95,6 +95,6 @@
     "post-processors": [{
       "type": "vagrant",
       "compression_level": "9",
-      "output": "boxes/{{ user `PACKER_BOX_NAME` }}.box"
+      "output": "vagrant_vm/{{ user `PACKER_BOX_NAME` }}.box"
     }]
   }
