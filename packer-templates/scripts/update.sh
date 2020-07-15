@@ -30,6 +30,25 @@ apt-get -y install screen
 echo "Installing git"
 apt-get -y install git
 
+# install pip3
+echo "Installing pip3"
+apt-get -y install python3-pip
+echo "Upgrading python3 pip"
+pip3 install --upgrade pip
+
+echo "Print (python3) pip version"
+pip --version
+
+echo "Installing cookiecutter"
+pip install --user cookiecutter
+
+echo "Add cookiecutter to path"
+export PATH=$HOME/.local/bin:$PATH
+source .profile
+
+echo "Print cookiecutter version"
+cookiecutter --version
+
 # sshd config
 echo "UseDNS no" >> /etc/ssh/sshd_config
 echo "GSSAPIAuthentication no" >> /etc/ssh/sshd_config
