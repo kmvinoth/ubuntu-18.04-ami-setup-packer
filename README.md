@@ -34,5 +34,9 @@ Once, packer finished building the artifacts, you will find the .box file in vag
 
 ## Spinning up the server and creating AMI on AWS
 
+I have selected **eu-central-1** as my region, feel free to change it to any region.
+
+* Run `export AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY`		
+* Run `export AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS_KEY`
 * Run `packer build -only=amazon-ebs ubuntu-18.04-server.json`
 

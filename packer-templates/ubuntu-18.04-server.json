@@ -1,7 +1,10 @@
 {
     "variables": {
         "PACKER_OS_FLAVOUR": "ubuntu",
-        "PACKER_BOX_NAME": "ubuntu-18.04.4-server-amd64"
+        "PACKER_BOX_NAME": "ubuntu-18.04.4-server-amd64",
+        "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
+        "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
+        "region": "eu-central-1"
       },
     "builders": [
         {
@@ -64,6 +67,24 @@
                 "1"
             ]
             ]
+        },
+        {
+          "type": "amazon-ebs",
+          "access_key": "{{user `aws_access_key`}}",
+          "ami_name": "packer-linux-ubuntu-18.04-{{timestamp}}",
+          "instance_type": "t2.micro",
+          "region": "{{user `region`}}",
+          "secret_key": "{{user `aws_secret_key`}}",
+          "source_ami_filter": {
+            "filters": {
+              "virtualization-type": "hvm",
+              "name": "ubuntu/images/*ubuntu-bionic-18.04-amd64-server-*",
+              "root-device-type": "ebs"
+            },
+            "owners": ["099720109477"],
+            "most_recent": true
+          },
+          "ssh_username": "ubuntu"
         }
     ],
     "provisioners": [
