@@ -6,3 +6,5 @@ packer-templates/boxes/
 vagrant_vm/.vagrant
 vagrant_vm/*.box
 .ssh/
+*.code-workspace
+settings.json
